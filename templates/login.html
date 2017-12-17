@@ -1,6 +1,6 @@
-<% extends 'base.html' %>
+{% extends 'base.html' %}
 
-<% block content %>
+{% block content %}
     <h1>Sign in</h1>
     <form action="" method="post" name="login">
         {{ form.hidden_tag() }}
@@ -13,7 +13,7 @@
         </p>
         <p>
             {{ form.password.label }}<br>
-            {{ form.password.size(32) }}<br>
+            {{ form.password(size=32) }}<br>
             {% for error in form.username.errors %}
             <span style="color: red;">[{{ error }}]</span>>
             {% endfor %}
@@ -21,4 +21,4 @@
         <p>{{ form.remember_me() }}{{ form.remember_me.label }}</p>
         <p> {{ form.submit() }}</p>>
     </form>
-<% endblock %>
+{% endblock %}
